@@ -8,9 +8,14 @@ public class WordFrequencyGame {
 
         List<WordInfo> wordInfoList = calculateWordFrequency(sentence);
 
-        wordInfoList.sort((firstWord, secondWord) -> secondWord.getWordFrequency() - firstWord.getWordFrequency());
+        sortListByWordFrequency(wordInfoList);
 
         return getJoinedWordInfo(wordInfoList);
+    }
+
+    private void sortListByWordFrequency(List<WordInfo> wordInfoList) {
+        wordInfoList.sort((firstWord, secondWord) ->
+                secondWord.getWordFrequency() - firstWord.getWordFrequency());
     }
 
     private String getJoinedWordInfo(List<WordInfo> wordInfoList) {
