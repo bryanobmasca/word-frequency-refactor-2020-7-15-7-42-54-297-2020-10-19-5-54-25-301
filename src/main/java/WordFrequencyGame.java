@@ -10,16 +10,16 @@ public class WordFrequencyGame {
 
         wordInfoList.sort((firstWord, secondWord) -> secondWord.getWordFrequency() - firstWord.getWordFrequency());
 
-        return getStringJoiner(wordInfoList);
+        return getJoinedWordInfo(wordInfoList);
     }
 
-    private String getStringJoiner(List<WordInfo> wordInfoList) {
-        StringJoiner joiner = new StringJoiner("\n");
+    private String getJoinedWordInfo(List<WordInfo> wordInfoList) {
+        StringJoiner joinedWordInfo = new StringJoiner("\n");
         for (WordInfo wordInfo : wordInfoList) {
             String wordInfoLine = String.format("%s %d", wordInfo.getWord(), wordInfo.getWordFrequency());
-            joiner.add(wordInfoLine);
+            joinedWordInfo.add(wordInfoLine);
         }
-        return joiner.toString();
+        return joinedWordInfo.toString();
     }
 
     private List<WordInfo> calculateWordFrequency(String sentence) {
