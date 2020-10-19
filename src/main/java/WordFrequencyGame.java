@@ -2,8 +2,6 @@ import java.util.*;
 
 public class WordFrequencyGame {
 
-    private static final String WHITE_SPACES = "\\s+";
-
     public String getResult(String sentence) {
         List<WordInfo> wordInfoList = calculateWordFrequency(sentence);
         sortListByWordFrequency(wordInfoList);
@@ -25,6 +23,7 @@ public class WordFrequencyGame {
     }
 
     private List<WordInfo> calculateWordFrequency(String sentence) {
+        final String WHITE_SPACES = "\\s+";
         List<String> words = Arrays.asList(sentence.split(WHITE_SPACES));
         List<WordInfo> wordInfos = new ArrayList<>();
         for (String word : new HashSet<>(words)) {
