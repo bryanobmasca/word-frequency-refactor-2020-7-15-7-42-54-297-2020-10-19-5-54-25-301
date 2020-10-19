@@ -1,5 +1,8 @@
 import java.util.*;
 
+import static java.util.Collections.reverseOrder;
+import static java.util.Comparator.comparingInt;
+
 public class WordFrequencyGame {
 
     public String getResult(String sentence) {
@@ -9,8 +12,7 @@ public class WordFrequencyGame {
     }
 
     private void sortListByWordFrequency(List<WordInfo> wordInfoList) {
-        wordInfoList.sort((firstWord, secondWord) ->
-                secondWord.getWordFrequency() - firstWord.getWordFrequency());
+        wordInfoList.sort(reverseOrder(comparingInt(WordInfo::getWordFrequency)));
     }
 
     private String getJoinedWordInfo(List<WordInfo> wordInfoList) {
