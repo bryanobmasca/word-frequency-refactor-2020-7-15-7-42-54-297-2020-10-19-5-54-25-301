@@ -1,8 +1,9 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
 
-    public static final String WHITE_SPACES = "\\s+";
+    private static final String WHITE_SPACES = "\\s+";
 
     public String getResult(String sentence) {
         if (sentence.split(WHITE_SPACES).length == 1) {
