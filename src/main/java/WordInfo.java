@@ -7,7 +7,6 @@ public class WordInfo {
         this.frequency = frequency;
     }
 
-
     public String getWord() {
         return this.word;
     }
@@ -15,6 +14,4 @@ public class WordInfo {
     public int getWordFrequency() {
         return this.frequency;
     }
-
-
 }
