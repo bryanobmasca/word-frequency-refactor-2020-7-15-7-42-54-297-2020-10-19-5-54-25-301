@@ -14,4 +14,8 @@ public class WordInfo {
     public int getWordFrequency() {
         return this.frequency;
     }
+
+    public String getWordInfo(){
+        return String.format("%s %d", this.getWord(), this.getWordFrequency());
+    }
 }

@@ -5,11 +5,8 @@ public class WordFrequencyGame {
     private static final String WHITE_SPACES = "\\s+";
 
     public String getResult(String sentence) {
-
         List<WordInfo> wordInfoList = calculateWordFrequency(sentence);
-
         sortListByWordFrequency(wordInfoList);
-
         return getJoinedWordInfo(wordInfoList);
     }
 
@@ -21,7 +18,7 @@ public class WordFrequencyGame {
     private String getJoinedWordInfo(List<WordInfo> wordInfoList) {
         StringJoiner joinedWordInfo = new StringJoiner("\n");
         for (WordInfo wordInfo : wordInfoList) {
-            String wordInfoLine = String.format("%s %d", wordInfo.getWord(), wordInfo.getWordFrequency());
+            String wordInfoLine = wordInfo.getWordInfo();
             joinedWordInfo.add(wordInfoLine);
         }
         return joinedWordInfo.toString();
